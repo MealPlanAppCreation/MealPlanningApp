@@ -10,7 +10,7 @@
 
 ### Description
 
-An app design to make meal preparations by providing recipe suggestion, and customizable meal plans with ingredients materials for all meals.
+An app designed to make meal preparations by providing recipe suggestions, and customizable meal plans with ingredients and materials for all meals.
 
 ### App Evaluation
 

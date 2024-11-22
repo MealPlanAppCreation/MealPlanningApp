@@ -108,20 +108,6 @@ An app designed to make meal preparations by providing recipe suggestions, and c
     * => Meal Screen
     * => Home Screen
 
-## Wireframes
-
-[Add picture of your hand sketched wireframes in this section] <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
-
-<br>
-
-<br>
-
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
-
-<br>
-
 # Milestone 2 - Build Sprint 1 (Unit 8)
 
 ## GitHub Project board

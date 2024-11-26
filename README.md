@@ -112,14 +112,17 @@ An app designed to make meal preparations by providing recipe suggestions, and c
 
 ## GitHub Project board
 
-[Add screenshot of your Project Board with three milestones visible in
-this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+![image](https://github.com/user-attachments/assets/76d88a78-4f8f-4256-aa6d-e8fffc500350)
+
+![image](https://github.com/user-attachments/assets/d76e41cf-8851-4328-b747-561bbab9a68f)
+
+
 
 ## Issue cards
 
-- [Add screenshot of your Project Board with the issues that you've been working on for this unit's milestone] <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
-- [Add screenshot of your Project Board with the issues that you're working on in the **NEXT sprint**. It should include issues for next unit with assigned owners.] <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+![image](https://github.com/user-attachments/assets/0d8f0d5c-230d-48dd-a581-d06ab7556d52)
+
+![image](https://github.com/user-attachments/assets/b8d2be9b-9a87-4dba-8799-fe291b33adda)
 
 ## Issues worked on this sprint
 

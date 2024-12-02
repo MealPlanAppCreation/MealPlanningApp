@@ -62,9 +62,7 @@ An app designed to make meal preparations by providing recipe suggestions, and c
 
 1.  User can save favorite meals in a personalized library
 2.  User can add their own recipes
-3.  User can track nutrional information for meals
-4.  Users can create accounts and log in
-5.  Users can view a history of past meals
+3.  Users can create accounts and log in
 
 ### 2. Screen Archetypes
 

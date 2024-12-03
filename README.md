@@ -85,46 +85,59 @@ An app designed to make meal preparations by providing recipe suggestions, and c
 
 ### 3. Navigation
 
-**Tab Navigation** (Tab to Screen)
+**1. Tab Navigation** (Fragment Switching)
 
-1. Home Screen
-2. Meal Plan
-3. Recipe Screen
+#### Recipe List Fragment
+* Displays a list of recipes fetched from an API.
+* Recipes are clickable to navigate to their Detail View.
 
-**Flow Navigation** (Screen to Screen)
-* Login Screen
-    * => Home
-* Registration Screen
-    * => Home
-* Home Screen
-    * => Meal Plan
-    * => Recipe Screen
-* Meal Plan
-    * => Recipe screen
-    * => Home Screen
-* Recipe Screem
-    * => Meal Screen
-    * => Home Screen
+#### Favorites Fragment
+* Shows a list of user-favorite meals.
+* Favorites are clickable to navigate to their Detail View.
+
+#### Calendar Fragment
+* Displays a calendar view for meal planning.
+* Clicking on a date or meal in the calendar navigates to the Detail View.
+
+**2. Flow Navigation** (Screen to Screen)
+
+### Login Screen
+* Navigates to the Home Screen upon successful login.
+### Registration Screen
+* Navigates to the Home Screen upon successful registration.
+
+### Home Screen
+* Contains the tab navigation (Recipe List, Favorites, Calendar).
+* Each fragment can navigate to:
+* Detail View (when a meal/recipe is clicked).
+
+### Detail View Screen
+* Displays detailed information about a selected recipe/meal.
+* Can navigate back to Home Screen.
 
 # Milestone 2 - Build Sprint 1 (Unit 8)
 
 ## GitHub Project board
 
-![image](https://github.com/user-attachments/assets/76d88a78-4f8f-4256-aa6d-e8fffc500350)
 
-![image](https://github.com/user-attachments/assets/d76e41cf-8851-4328-b747-561bbab9a68f)
+
+![image](https://github.com/user-attachments/assets/35a6a77d-62cd-4740-9323-78d8494ca562)
+
+
+![image](https://github.com/user-attachments/assets/938c650d-8986-45f9-af29-ad76751f82c1)
+
 
 
 
 ## Issue cards
 
-![image](https://github.com/user-attachments/assets/0d8f0d5c-230d-48dd-a581-d06ab7556d52)
+![image](https://github.com/user-attachments/assets/018eb9a5-d8a4-49d8-b72f-48102da3e1da)
 
-![image](https://github.com/user-attachments/assets/b8d2be9b-9a87-4dba-8799-fe291b33adda)
 
 ## Issues worked on this sprint
-
 - List the issues you completed this sprint
+- ![image](https://github.com/user-attachments/assets/60e1ab9d-2966-40f0-a8c0-2676d8c032a0)
+
 - [Add giphy that shows current build progress for Milestone 2. Note: We will be looking for progression of work between Milestone 2 and 3. Make sure your giphys are not duplicated and clearly show the change from Sprint 1 to 2.]
 
 <br>

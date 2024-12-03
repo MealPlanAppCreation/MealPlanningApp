@@ -138,7 +138,8 @@ An app designed to make meal preparations by providing recipe suggestions, and c
 - List the issues you completed this sprint
 - ![image](https://github.com/user-attachments/assets/60e1ab9d-2966-40f0-a8c0-2676d8c032a0)
 
-- [Add giphy that shows current build progress for Milestone 2. Note: We will be looking for progression of work between Milestone 2 and 3. Make sure your giphys are not duplicated and clearly show the change from Sprint 1 to 2.]
+- ![MealPlanner](https://github.com/user-attachments/assets/3696d3ef-6af3-4fce-a74e-15951759b1c5)
+
 
 <br>
 

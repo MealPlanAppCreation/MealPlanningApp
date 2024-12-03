@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/detailLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+
+    <ImageView
+        android:id="@+id/mediaRecipeImage"
+        android:layout_width="317dp"
+        android:layout_height="310dp"
+        android:layout_marginTop="4dp"
+        android:transitionName="image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/mediaRecipeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:text="Title"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mediaRecipeImage" />
+
+    <!-- GridLayout for Ingredients and Measures -->
+
+    <TextView
+        android:id="@+id/mediaRecipeInstruction"
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif"
+        android:maxLines="10"
+        android:text="Description"
+        android:textAppearance="?attr/textAppearanceListItem"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.372"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mediaRecipeName" />
+
+    <GridLayout
+        android:id="@+id/ingredientsGrid"
+        android:layout_width="406dp"
+        android:layout_height="166dp"
+        android:columnCount="2"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:rowCount="20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mediaRecipeInstruction">
+
+        <TextView
+            android:id="@+id/ingredient1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Ingredient 1"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/measure1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="measure 1"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/ingredient2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Ingredient 2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/measure2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="measure 2"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/ingredient3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Ingredient 3"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/measure3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="measure 3"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/ingredient4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Ingredient 4"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/measure4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="measure 4"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/ingredient5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="Ingredient 5"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/measure5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:text="measure 5"
+            android:textSize="16sp" />
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/addFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Favorite"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/removeFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove Favorite"
+        app:layout_constraintBottom_toTopOf="@+id/addFavorite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ingredientsGrid" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

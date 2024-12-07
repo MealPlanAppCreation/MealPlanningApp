@@ -1,10 +1,12 @@
 package com.example.mealplanner
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.applandeo.materialcalendarview.CalendarDay
@@ -17,6 +19,7 @@ import com.example.mealplanner.databinding.ActivityMainBinding
 import com.example.mealplanner.fragments.FavoriteListFragment
 import com.example.mealplanner.fragments.RecipesFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.launch
 import java.util.Calendar
 
@@ -28,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var recipesFragment: RecipesFragment
     private lateinit var favoriteFragment: FavoriteListFragment
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +40,16 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        auth = FirebaseAuth.getInstance()
+
+        binding.logoutButton.setOnClickListener {
+            auth.signOut()
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+
+
         recipesFragment = RecipesFragment()
         favoriteFragment = FavoriteListFragment()
 
@@ -98,11 +112,18 @@ class MainActivity : AppCompatActivity() {
          */
     }
 
-        private fun replaceFragment(foodListFragment: Fragment) {
+    private fun replaceFragment(foodListFragment: Fragment) {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
         fragmentTransaction.replace(R.id.recipe_frame_layout, foodListFragment)
         fragmentTransaction.commit()
+    }
+
+    // Logout function to be called from HomeFragment
+    fun logout() {
+        auth.signOut()
+        startActivity(Intent(this, LoginActivity::class.java))
+        finish()
     }
 
     private fun loadDatabase() {

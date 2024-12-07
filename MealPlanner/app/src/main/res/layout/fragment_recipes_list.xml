@@ -8,8 +8,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list"
         android:name="com.example.mealplanner.RecipesFragment"
-        android:layout_width="399dp"
-        android:layout_height="match_parent"
+        android:layout_width="390dp"
+        android:layout_height="675dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         app:layoutManager="LinearLayoutManager"

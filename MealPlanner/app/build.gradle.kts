@@ -69,7 +69,16 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core.v340)
     implementation(libs.androidx.activity)
     implementation(kotlin("script-runtime"))
-    implementation(platform("com.google.firebase:firebase-bom:33.6.0"))
-    implementation("com.google.firebase:firebase-analytics")
     implementation("com.applandeo:material-calendar-view:1.9.2")
+
+    // Firebase BoM
+    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+
+    // Firebase SDKs
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-firestore")
+
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
 }

@@ -35,9 +35,10 @@ class FavoriteListFragment  : Fragment() {
         val searchButton = requireActivity().findViewById<Button>(R.id.searchButton)
         val searchEditText = requireActivity().findViewById<TextInputEditText>(R.id.textInputEditText)
         val textInputLayout = requireActivity().findViewById<TextInputLayout>(R.id.textInputLayout)
+        val calendarView = requireActivity().findViewById<com.applandeo.materialcalendarview.CalendarView>(R.id.calendar)
         textInputLayout.visibility = View.GONE
         searchEditText.visibility = View.GONE
-
+        calendarView.visibility = View.VISIBLE
         searchButton.visibility = View.GONE
         //change
         recipesAdapter = FavoriteAdapter(recipes) { recipe ->

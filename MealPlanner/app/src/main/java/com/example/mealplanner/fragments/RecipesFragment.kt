@@ -43,11 +43,11 @@ class RecipesFragment : Fragment(), OnListFragmentInteractionListener {
         val searchButton = requireActivity().findViewById<Button>(R.id.searchButton)
         recyclerView.layoutManager = GridLayoutManager(context, 1)
         updateAdapter(recipeURL,progressBar, recyclerView)
-
+        val calendarView = requireActivity().findViewById<com.applandeo.materialcalendarview.CalendarView>(R.id.calendar)
         val textInputLayout = requireActivity().findViewById<TextInputLayout>(R.id.textInputLayout)
         textInputLayout.visibility = View.VISIBLE
         searchEditText.visibility = View.VISIBLE
-
+        calendarView.visibility = View.VISIBLE
         searchButton.visibility = View.VISIBLE
         searchButton.setOnClickListener {
             val query = searchEditText.text.toString()

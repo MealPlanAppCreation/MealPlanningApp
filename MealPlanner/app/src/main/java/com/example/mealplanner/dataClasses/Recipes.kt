@@ -8,7 +8,21 @@ import com.google.gson.annotations.SerializedName
  * SerializedName tags MUST match the JSON response for the
  * object to correctly parse with the gson library.
  */
-class Recipes {
+class Recipes(
+    recipeName: String?,
+    recipeImage: String?,
+    recipeInstruction: String?,
+    ingredient1: String?,
+    ingredient2: String?,
+    ingredient3: String?,
+    ingredient4: String?,
+    ingredient5: String?,
+    measure1: String?,
+    measure2: String?,
+    measure3: String?,
+    measure4: String?,
+    measure5: String?
+) {
     @JvmField
     @SerializedName("strMeal")
     var recipeName: String? = null

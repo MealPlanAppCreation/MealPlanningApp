@@ -9,9 +9,10 @@
     <FrameLayout
         android:id="@+id/recipe_frame_layout"
         android:layout_width="411dp"
-        android:layout_height="488dp"
+        android:layout_height="332dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -68,14 +69,13 @@
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-    <!--
-      <com.applandeo.materialcalendarview.CalendarView
-          android:id="@+id/calendar"
-          android:layout_width="374dp"
-          android:layout_height="273dp"
-          app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
-    -->
-  </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.applandeo.materialcalendarview.CalendarView
+        android:id="@+id/calendar"
+        android:layout_width="410dp"
+        android:layout_height="255dp"
+        app:layout_constraintBottom_toTopOf="@+id/logoutButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,6 @@
 package com.example.mealplanner
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -13,18 +14,21 @@ import com.example.mealplanner.adapters.FavoriteAdapter
 import com.example.mealplanner.dataClasses.RecipeData
 import com.example.mealplanner.dataClasses.RecipeEntity
 import com.example.mealplanner.database.RecipeApplication
+import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.util.Calendar
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var recipeImageView: ImageView
     private lateinit var recipeNameView: TextView
     private lateinit var recipeInstructionView: TextView
     private lateinit var addFavoriteButton: Button
+    private lateinit var addCalendarButton: Button
     private lateinit var removeFavoriteButton: Button
     private lateinit var favoriteAdapter: FavoriteAdapter
     private lateinit var recipeIngredient1: TextView
@@ -37,8 +41,10 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var recipeMeasure3: TextView
     private lateinit var recipeMeasure4: TextView
     private lateinit var recipeMeasure5: TextView
+    private lateinit var calendarDate: TextInputEditText
 
 
+    @SuppressLint("MissingInflatedId", "DefaultLocale")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
@@ -47,6 +53,7 @@ class DetailActivity : AppCompatActivity() {
         recipeNameView = findViewById(R.id.mediaRecipeName)
         recipeInstructionView= findViewById(R.id.mediaRecipeInstruction)
         addFavoriteButton = findViewById(R.id.addFavorite)
+        addCalendarButton = findViewById(R.id.addCalendar)
         removeFavoriteButton = findViewById(R.id.removeFavorite)
         recipeIngredient1 = findViewById(R.id.ingredient1)
         recipeIngredient2 = findViewById(R.id.ingredient2)
@@ -58,6 +65,7 @@ class DetailActivity : AppCompatActivity() {
         recipeMeasure3 = findViewById(R.id.measure3)
         recipeMeasure4 = findViewById(R.id.measure4)
         recipeMeasure5 = findViewById(R.id.measure5)
+        calendarDate = findViewById(R.id.calendarDateID)
 
         val name = intent.getStringExtra("EXTRA_NAME")
         val instruction = intent.getStringExtra("EXTRA_INSTRUCTIONS")
@@ -130,6 +138,36 @@ class DetailActivity : AppCompatActivity() {
                 favoriteAdapter.updateFoods(mappedFoods)
             }
             Toast.makeText(this, "Recipe Remove From Favorites", Toast.LENGTH_SHORT).show()
+        }
+
+        addCalendarButton.setOnClickListener {
+            val db = FirebaseFirestore.getInstance()
+            val date = calendarDate.text.toString()
+            val calendarRecipe = hashMapOf(
+                "date" to date,
+                "name" to name,
+                "imageLink" to image,
+                "instructions" to instruction,
+                "ingredient1" to ingredient1,
+                "ingredient2" to ingredient2,
+                "ingredient3" to ingredient3,
+                "ingredient4" to ingredient4,
+                "ingredient5" to ingredient5,
+                "measure1" to measure1,
+                "measure2" to measure2,
+                "measure3" to measure3,
+                "measure4" to measure4,
+                "measure5" to measure5,
+            )
+            db.collection("calendar")
+                .document(calendarRecipe["date"] as String)
+                .set(calendarRecipe)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Recipe added to calendar!", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(this, "${e.message}", Toast.LENGTH_SHORT).show()
+                }
         }
 
         addFavoriteButton.setOnClickListener {

@@ -158,9 +158,11 @@
         android:id="@+id/addFavorite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="Add Favorite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.748"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
@@ -170,8 +172,36 @@
         android:text="Remove Favorite"
         app:layout_constraintBottom_toTopOf="@+id/addFavorite"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.785"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ingredientsGrid" />
+        app:layout_constraintTop_toBottomOf="@+id/ingredientsGrid"
+        app:layout_constraintVertical_bias="0.636" />
+
+    <Button
+        android:id="@+id/addCalendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Add Calendar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/addFavorite"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="186dp"
+        android:layout_height="60dp"
+        app:layout_constraintBottom_toTopOf="@+id/addCalendar"
+        app:layout_constraintEnd_toStartOf="@+id/removeFavorite"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ingredientsGrid">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/calendarDateID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="DD-MM-YYYY" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

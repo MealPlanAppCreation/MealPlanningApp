@@ -25,16 +25,13 @@ class FavoriteAdapter(
         recipes = newFoods
         notifyDataSetChanged()
     }
-    // ViewHolder class
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val recipeNameView: TextView = itemView.findViewById(R.id.recipeNameTv)
         val recipeImageView: ImageView = itemView.findViewById(R.id.recipeImageTv)
 
-        // Bind the data and click listener
         fun bind(recipe: RecipeData, onItemClickListener: (RecipeData) -> Unit) {
             recipeNameView.text = recipe.name
 
-            // Glide for image loading
             val radius = 50
             val requestOptions = RequestOptions()
                 .transform(CenterCrop(), RoundedCorners(radius))

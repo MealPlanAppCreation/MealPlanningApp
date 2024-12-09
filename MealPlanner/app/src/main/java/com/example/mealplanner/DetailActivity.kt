@@ -2,6 +2,7 @@ package com.example.mealplanner
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
@@ -9,7 +10,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.applandeo.materialcalendarview.CalendarDay
+import com.applandeo.materialcalendarview.CalendarView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.example.mealplanner.adapters.FavoriteAdapter
 import com.example.mealplanner.dataClasses.RecipeData
 import com.example.mealplanner.dataClasses.RecipeEntity
@@ -42,8 +46,8 @@ class DetailActivity : AppCompatActivity() {
     private lateinit var recipeMeasure4: TextView
     private lateinit var recipeMeasure5: TextView
     private lateinit var calendarDate: TextInputEditText
-
-
+    private lateinit var calendarView: CalendarView
+    private lateinit var inst: TextView
     @SuppressLint("MissingInflatedId", "DefaultLocale")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,6 +70,9 @@ class DetailActivity : AppCompatActivity() {
         recipeMeasure4 = findViewById(R.id.measure4)
         recipeMeasure5 = findViewById(R.id.measure5)
         calendarDate = findViewById(R.id.calendarDateID)
+        inst = findViewById(R.id.mediaRecipeInstruction)
+        inst.movementMethod = ScrollingMovementMethod()
+
 
         val name = intent.getStringExtra("EXTRA_NAME")
         val instruction = intent.getStringExtra("EXTRA_INSTRUCTIONS")
@@ -87,6 +94,7 @@ class DetailActivity : AppCompatActivity() {
         recipeInstructionView.text = instruction
         Glide.with(this)
             .load(image)
+            .transform(RoundedCorners(30))
             .into(recipeImageView)
         recipeIngredient1.text = ingredient1
         recipeIngredient2.text = ingredient2

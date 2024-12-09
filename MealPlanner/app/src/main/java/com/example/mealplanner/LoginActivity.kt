@@ -16,10 +16,8 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Set default fragment to LoginFragment
         replaceFragment(LoginFragment())
 
-        // Handle bottom navigation item selection
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_login -> {

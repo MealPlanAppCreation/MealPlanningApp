@@ -1,7 +1,9 @@
 package com.example.mealplanner
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -12,7 +14,6 @@ import com.applandeo.materialcalendarview.CalendarView
 import com.applandeo.materialcalendarview.listeners.OnCalendarDayClickListener
 import com.applandeo.materialcalendarview.listeners.OnCalendarPageChangeListener
 import com.example.mealplanner.dataClasses.RecipeData
-import com.example.mealplanner.dataClasses.Recipes
 import com.example.mealplanner.database.RecipeApplication
 import com.example.mealplanner.databinding.ActivityMainBinding
 import com.example.mealplanner.fragments.FavoriteListFragment
@@ -25,7 +26,6 @@ import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
     private lateinit var calendarView: CalendarView
-    private var events: MutableMap<String, String> = mutableMapOf()
     private lateinit var binding: ActivityMainBinding
     private lateinit var recipesFragment: RecipesFragment
     private lateinit var favoriteFragment: FavoriteListFragment
@@ -65,6 +65,12 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.selectedItemId = R.id.nav_home
         loadDatabase()
 
+        val addRecipeButton = findViewById<Button>(R.id.addRecipe)
+        addRecipeButton.setOnClickListener {
+            val intent = Intent(this, AddingActivity::class.java)
+            startActivity(intent)
+        }
+
         val db = FirebaseFirestore.getInstance()
         calendarView = findViewById(R.id.calendar)
         val events = mutableMapOf<String, String>()
@@ -77,30 +83,22 @@ class MainActivity : AppCompatActivity() {
                     for (document in result) {
                         val date = document.getString("date") ?: continue
                         val recipeName = document.getString("name") ?: "Recipe"
-
-                        // Add to events map
                         events[date] = recipeName
-
-                        // Parse the date into a Calendar object
-                        val parts = date.split("-") // Assuming "YYYY-MM-DD" format
+                        val parts = date.split("-")
                         if (parts.size == 3) {
                             val year = parts[2].toInt()
-                            val month = parts[1].toInt() - 1 // Calendar months are 0-based
+                            val month = parts[1].toInt() - 1
                             val day = parts[0].toInt()
 
                             val calendar = Calendar.getInstance()
                             calendar.set(year, month, day)
-
-                            // Create a CalendarDay object and style it
                             val calendarDay = CalendarDay(calendar)
-                            calendarDay.labelColor = R.color.yellow
+                            calendarDay.labelColor = R.color.red
                             calendarDay.imageResource = R.drawable.baseline_food_bank_24
 
                             calendars.add(calendarDay)
                         }
                     }
-
-                    // Update the CalendarView with the fetched days
                     calendarView.setCalendarDays(calendars)
                 }
                 .addOnFailureListener { e ->
@@ -108,10 +106,10 @@ class MainActivity : AppCompatActivity() {
                 }
         }
 
-        // Call this function after setting up the calendar view
         loadEvents()
 
         calendarView.setOnCalendarDayClickListener(object : OnCalendarDayClickListener {
+            @SuppressLint("DefaultLocale")
             override fun onClick(calendarDay: CalendarDay) {
                 val day = String.format("%02d", calendarDay.calendar.get(Calendar.DAY_OF_MONTH))
                 val month = String.format("%02d", calendarDay.calendar.get(Calendar.MONTH) + 1)
@@ -141,7 +139,6 @@ class MainActivity : AppCompatActivity() {
                                     "measure4" to document.getString("measure4"),
                                     "measure5" to document.getString("measure5")
                                 )
-                                // Call the onItemClick function with the fetched recipe
                                 onItemClick(recipeMap)
                             } else {
                                 Toast.makeText(baseContext, "No recipe found for this date", Toast.LENGTH_SHORT).show()
@@ -157,6 +154,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         calendarView.setOnPreviousPageChangeListener(object: OnCalendarPageChangeListener {
+            @SuppressLint("DefaultLocale")
             override fun onChange() {
                 val month = String.format("%02d", calendarView.currentPageDate.get(Calendar.MONTH) + 1)
                 val year = calendarView.currentPageDate.get(Calendar.YEAR)
@@ -164,6 +162,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
         calendarView.setOnForwardPageChangeListener(object: OnCalendarPageChangeListener {
+            @SuppressLint("DefaultLocale")
             override fun onChange() {
                 val month = String.format("%02d", calendarView.currentPageDate.get(Calendar.MONTH) + 1)
                 val year = calendarView.currentPageDate.get(Calendar.YEAR)
@@ -197,7 +196,6 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.commit()
     }
 
-    // Logout function to be called from HomeFragment
     fun logout() {
         auth.signOut()
         startActivity(Intent(this, LoginActivity::class.java))

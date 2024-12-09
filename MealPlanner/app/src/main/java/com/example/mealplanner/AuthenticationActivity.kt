@@ -14,10 +14,8 @@ class AuthenticationActivity : AppCompatActivity() {
 
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            // User is signed in, go to MainActivity
             startActivity(Intent(this, MainActivity::class.java))
         } else {
-            // User is not signed in, go to LoginActivity
             startActivity(Intent(this, LoginActivity::class.java))
         }
         finish() // Close this activity

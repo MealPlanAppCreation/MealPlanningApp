@@ -4,61 +4,69 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/background">
 
     <FrameLayout
         android:id="@+id/recipe_frame_layout"
-        android:layout_width="411dp"
-        android:layout_height="332dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="403dp"
+        android:layout_height="375dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.125"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/homeText">
 
     </FrameLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="89dp"
-        android:layout_gravity="center"
-        android:background="@android:color/transparent"
-        android:elevation="0dp"
-        app:itemHorizontalTranslationEnabled="false"
+        android:layout_width="409dp"
+        android:layout_height="85dp"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/button_navigation_menu" >
 
-        app:menu="@menu/button_navigation_menu" />
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="245dp"
-        android:layout_height="57dp"
-        android:visibility="gone"
+    <Button
+        android:id="@+id/addRecipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Add Recipe"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:backgroundTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recipe_frame_layout">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textInputEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Search Recipe" />
-    </com.google.android.material.textfield.TextInputLayout>
-
+        app:layout_constraintTop_toBottomOf="@+id/recipe_frame_layout" />
 
     <Button
         android:id="@+id/searchButton"
-        android:layout_width="116dp"
+        android:layout_width="102dp"
         android:layout_height="57dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginEnd="64dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:backgroundTint="@color/red"
         android:text="Search"
-        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.673"
-        app:layout_constraintStart_toEndOf="@+id/textInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/recipe_frame_layout" />
+
+    <EditText
+        android:id="@+id/searchRecipe"
+        android:layout_width="168dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="60dp"
+        android:hint="Search Recipe"
+        android:inputType="text"
+        android:textStyle="bold"
+        android:backgroundTint="@color/black"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recipe_frame_layout" />
 
     <Button
@@ -66,16 +74,42 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Logout"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:backgroundTint="@color/red"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.applandeo.materialcalendarview.CalendarView
         android:id="@+id/calendar"
-        android:layout_width="410dp"
-        android:layout_height="255dp"
+        android:layout_width="332dp"
+        android:layout_height="267dp"
+        android:layout_marginBottom="12dp"
+        app:headerColor="@color/red"
         app:layout_constraintBottom_toTopOf="@+id/logoutButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </com.applandeo.materialcalendarview.CalendarView>
+
+    <TextView
+        android:id="@+id/homeText"
+        android:layout_width="168dp"
+        android:layout_height="33dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Home"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

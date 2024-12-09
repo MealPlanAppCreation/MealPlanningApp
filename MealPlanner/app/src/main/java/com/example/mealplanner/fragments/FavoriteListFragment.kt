@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -31,16 +33,17 @@ class FavoriteListFragment  : Fragment() {
         recipesRecyclerView = view.findViewById(R.id.recipe_recycler_view)
         recipesRecyclerView.layoutManager = layoutManager
         recipesRecyclerView.setHasFixedSize(true)
-
+        val addRecipe = requireActivity().findViewById<Button>(R.id.addRecipe)
         val searchButton = requireActivity().findViewById<Button>(R.id.searchButton)
-        val searchEditText = requireActivity().findViewById<TextInputEditText>(R.id.textInputEditText)
-        val textInputLayout = requireActivity().findViewById<TextInputLayout>(R.id.textInputLayout)
+        val searchEditText = requireActivity().findViewById<EditText>(R.id.searchRecipe)
         val calendarView = requireActivity().findViewById<com.applandeo.materialcalendarview.CalendarView>(R.id.calendar)
-        textInputLayout.visibility = View.GONE
+        val homeText = requireActivity().findViewById<TextView>(R.id.homeText)
         searchEditText.visibility = View.GONE
         calendarView.visibility = View.VISIBLE
         searchButton.visibility = View.GONE
-        //change
+        addRecipe.visibility = View.VISIBLE
+        homeText.text = "Favorites"
+
         recipesAdapter = FavoriteAdapter(recipes) { recipe ->
             onRecipeClick(recipe)
         }
@@ -58,7 +61,6 @@ class FavoriteListFragment  : Fragment() {
         }
     }
 
-    // Function to handle item clicks
     private fun onRecipeClick(recipe: RecipeData) {
         val intent = Intent(context, DetailActivity::class.java).apply {
             putExtra("EXTRA_NAME", recipe.name)

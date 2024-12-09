@@ -46,6 +46,7 @@ android {
 
 dependencies {
     implementation(libs.firebase.messaging)
+    implementation(libs.firebase.storage.ktx)
     val room_version = "2.4.2"
     implementation("androidx.room:room-runtime:$room_version")
     implementation("androidx.room:room-ktx:$room_version")
@@ -55,6 +56,7 @@ dependencies {
     implementation(libs.kotlin.stdlib)
     implementation(libs.androidx.core.ktx.v180)
     implementation(libs.androidx.appcompat.v142)
+    implementation(libs.androidx.constraintlayout)
     implementation(libs.material.v161)
     implementation(libs.androidx.constraintlayout.v214)
     implementation(libs.asynchttpclient)
@@ -71,10 +73,7 @@ dependencies {
     implementation(kotlin("script-runtime"))
     implementation("com.applandeo:material-calendar-view:1.9.2")
 
-    // Firebase BoM
     implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
-
-    // Firebase SDKs
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")

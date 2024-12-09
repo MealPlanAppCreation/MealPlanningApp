@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import androidx.core.widget.ContentLoadingProgressBar
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
@@ -39,16 +41,19 @@ class RecipesFragment : Fragment(), OnListFragmentInteractionListener {
         val progressBar = view.findViewById<View>(R.id.progress) as ContentLoadingProgressBar
         val recyclerView = view.findViewById<View>(R.id.list) as RecyclerView
         val context = view.context
-        val searchEditText = requireActivity().findViewById<TextInputEditText>(R.id.textInputEditText)
+        val searchEditText = requireActivity().findViewById<EditText>(R.id.searchRecipe)
         val searchButton = requireActivity().findViewById<Button>(R.id.searchButton)
+        val addRecipe = requireActivity().findViewById<Button>(R.id.addRecipe)
+        val homeText = requireActivity().findViewById<TextView>(R.id.homeText)
         recyclerView.layoutManager = GridLayoutManager(context, 1)
         updateAdapter(recipeURL,progressBar, recyclerView)
         val calendarView = requireActivity().findViewById<com.applandeo.materialcalendarview.CalendarView>(R.id.calendar)
-        val textInputLayout = requireActivity().findViewById<TextInputLayout>(R.id.textInputLayout)
-        textInputLayout.visibility = View.VISIBLE
         searchEditText.visibility = View.VISIBLE
         calendarView.visibility = View.VISIBLE
         searchButton.visibility = View.VISIBLE
+        addRecipe.visibility = View.GONE
+        homeText.text = "Home"
+
         searchButton.setOnClickListener {
             val query = searchEditText.text.toString()
             val apiUrl = if (query.length == 1) {
@@ -76,13 +81,11 @@ class RecipesFragment : Fragment(), OnListFragmentInteractionListener {
             ) {
                 progressBar.hide()
 
-                // Parse JSON response
                 val mealsJSON = json.jsonObject.getJSONArray("meals")
                 val gson = Gson()
                 val arrayRecipeType = object : TypeToken<List<Recipes>>() {}.type
                 val recipes: List<Recipes> = gson.fromJson(mealsJSON.toString(), arrayRecipeType)
 
-                // Update RecyclerView adapter
                 recyclerView.adapter = RecipesRecyclerViewAdapter(recipes, this@RecipesFragment)
             }
 

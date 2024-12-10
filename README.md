@@ -4,8 +4,7 @@
 
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
-1. [Wireframes](#Wireframes)
-
+1. [Project Requirements](#Project-Requirements)
 ## Overview
 
 ### Description
@@ -54,15 +53,15 @@ An app designed to make meal preparations by providing recipe suggestions, and c
 
 **Required Features**
 
-1.   App sends reminders for meal prep times
-2.   User can view list of suggested recipes
-3.   User can select meals to create weekly plans
+1.   Users can create accounts and log in
+2.   User can view list of suggested recipes from an API
+3.   User can select meals from a personalized library to create weekly plans.
 
 **Optional Features**
-
 1.  User can save favorite meals in a personalized library
 2.  User can add their own recipes
-3.  Users can create accounts and log in
+3.  User have Navigation UI Views (BottomNavigation) to move between the fragments and components easily
+4.  App sends reminders for meal prep times
 
 ### 2. Screen Archetypes
 
@@ -73,15 +72,21 @@ An app designed to make meal preparations by providing recipe suggestions, and c
 * User can create a new account
 
 #### Home Screen
-* User can view a list of suggested meals
+* User can view a list of suggested meals and Calendar
 
-#### Meal Plan Screen
+#### Favorite Meal Screen
 * User can select meals to create a weekly plan
 * User can view the created meal plan
+* User can add recipe to personalize library
 
-#### Recipe Screen
-* User can view detailed instructions for each meal
-* User can view ingredients
+#### Detail Recipe Screen
+* User can fully view the details of each each meal
+* User can add or remove from favorite personalize library
+* User can add to calendar
+
+#### Adding Recipe Screen
+* User can input recipe details
+* User can select photos from phone libary
 
 ### 3. Navigation
 
@@ -90,26 +95,22 @@ An app designed to make meal preparations by providing recipe suggestions, and c
 #### Recipe List Fragment
 * Displays a list of recipes fetched from an API.
 * Recipes are clickable to navigate to their Detail View.
+* Can view calendar
 
 #### Favorites Fragment
 * Shows a list of user-favorite meals.
 * Favorites are clickable to navigate to their Detail View.
-
-#### Calendar Fragment
-* Displays a calendar view for meal planning.
-* Clicking on a date or meal in the calendar navigates to the Detail View.
+* can view calendar
+* can add personalized recipes
 
 **2. Flow Navigation** (Screen to Screen)
 
 ### Login Screen
 * Navigates to the Home Screen upon successful login.
-### Registration Screen
-* Navigates to the Home Screen upon successful registration.
 
 ### Home Screen
-* Contains the tab navigation (Recipe List, Favorites, Calendar).
-* Each fragment can navigate to:
-* Detail View (when a meal/recipe is clicked).
+* Contains the tab navigation (Recipe List and Favorites).
+* Recipes on RecycleView and Calendar can be click to view Detail View (when a meal/recipe is clicked).
 
 ### Detail View Screen
 * Displays detailed information about a selected recipe/meal.
@@ -118,19 +119,13 @@ An app designed to make meal preparations by providing recipe suggestions, and c
 # Milestone 2 - Build Sprint 1 (Unit 8)
 
 ## GitHub Project board
-
-
-
 ![image](https://github.com/user-attachments/assets/35a6a77d-62cd-4740-9323-78d8494ca562)
 
 
 ![image](https://github.com/user-attachments/assets/938c650d-8986-45f9-af29-ad76751f82c1)
 
 
-
-
 ## Issue cards
-
 ![image](https://github.com/user-attachments/assets/018eb9a5-d8a4-49d8-b72f-48102da3e1da)
 
 
@@ -146,17 +141,65 @@ An app designed to make meal preparations by providing recipe suggestions, and c
 # Milestone 3 - Build Sprint 2 (Unit 9)
 
 ## GitHub Project board
+![image](https://github.com/user-attachments/assets/a629a2db-2925-40ca-b639-98710a0d1eef)
 
-[Add screenshot of your Project Board with the updated status of issues for Milestone 3. Note that these should include the updated issues you worked on for this sprint and not be a duplicate of Milestone 2 Project board.] <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+![image](https://github.com/user-attachments/assets/36dde0a3-468e-4ce1-8788-13a1f65a4aab)
+
 
 ## Completed user stories
 
-- List the completed user stories from this unit
-- List any pending user stories / any user stories you decided to cut
-from the original requirements
+### List the completed user stories from this unit
+# Project-Requirements
 
-[Add video/gif of your current application that shows build progress]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+## Core Functional Requirements
+1. **Minimum Viable Product (MVP)**:
+   - **Required Features**: Implement at least 3 essential features critical to your app's main purpose.
+     - Users can create accounts and log in
+     - User can view list of suggested recipes from an API
+     - User can select meals from a personalized library to create weekly plans.
+   - **Secondary Features**: Include at least 3 additional features that enhance the app.
+     - User can save favorite meals in a personalized library
+     - User can add their own recipes
+     - User have Navigation UI Views (BottomNavigation) to move between the fragments and components easily
+
+2. **Firebase Integration**:
+   - Use **Firebase** for at least one key functionality:
+     - **User Authentication**
+     - **Real-time Database**
+
+3. **API Integration**:
+   - Integrate at least one **external API** to enhance the app (e.g., for data retrieval, messaging, location services). This should be a public API
+     - API USE: www.themealdb.com/api/json/v1/1/search.php?s=
+4. **Database Usage**:
+   - Use **Room Database** and **Firebase Firestore** to store user data persistently, supporting at least basic **CRUD operations** (Create, Read, Update, Delete).
+      - Use **Room Database** to store a list of favorite recipes
+      - Use **Firebase Firestore** to store the date that user want to make their recipes
+
+## UI and UX Requirements
+
+5. **Navigation**:
+   - **Tab Navigation**: Include at least two primary navigation tabs for easy access to main features.
+   - **Flow Navigation**: Implement structured navigation flows (e.g., detail screens, screen transitions).
+
+6. **Screen Archetypes**:
+   - Design with at least three main screen types to cover the core functions and ensure a clear user journey.
+     - Home/Favorite Fragments:
+     - Detail Recipe Screen:
+     - Adding personalize Recipe Screen:
+ 
+
+## Additional Project Requirements
+7. **Mobile-Specific Features**:
+   - Incorporate at least one mobile-specific capability that adds unique value to the mobile experience.
+     - User can select photos from their phone to add to the app.
+
+8. **UI Consistency**:
+   - Ensure a consistent look and feel across all screens, with consistent use of fonts, colors, and layouts.
+
+
+
+- List any pending user stories / any user stories you decided to cut from the original requirements
+   -  App sends reminders for meal prep times (Wanted to use the store date in firebase and send notification on the morning that the user was planning to do the recipe, but couldn't figure how in the time frame given)
 
 ## App Demo Video
 

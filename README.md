@@ -179,34 +179,54 @@ An app designed to make meal preparations by providing recipe suggestions, and c
 2. **Firebase Integration**:
    - [x] Use **Firebase** for at least one key functionality:
      - [x] Use **User Authentication** to save email/password and authenticate users.
+            ![image](https://github.com/user-attachments/assets/47020890-d54c-4756-b2ca-b6ad55c6dad5) ![auth](https://github.com/user-attachments/assets/2c82c96a-5e7c-48fe-886c-0b315779ff7d)
+
      - [x] Use **Real-time Database/Cloud Firestore** to save user calendar data.
+           ![image](https://github.com/user-attachments/assets/8fd86fac-7fe2-428f-8b60-842dd8b22928) 
 
 3. **API Integration**:
    - [x] Integrate at least one **external API** to enhance the app (e.g., for data retrieval, messaging, location services). This should be a public API
      - API USE: https://www.themealdb.com/api.php
+       
+      ![api](https://github.com/user-attachments/assets/86e8a60d-f522-4385-b2a9-5d2e0bbf9462)  ![image](https://github.com/user-attachments/assets/d745e960-d772-427a-9955-b15fdebbb7ae)
+
 
 4. **Database Usage**:
    - [x] Use **Room Database** and **Firebase Firestore** to store user data persistently, supporting at least basic **CRUD operations** (Create, Read, Update, Delete).
       - [x] Use **Room Database** to store a list of favorite recipes
+            ![image](https://github.com/user-attachments/assets/69722c64-9b19-4bac-81c8-73b5729c7c4b)
+
       - [x] Use **Firebase Firestore** to store user calendar data.
+            ![image](https://github.com/user-attachments/assets/f4546cfe-acd8-4fee-8bed-3664e6121ce6)
+
 
 ## UI and UX Requirements
 
 5. **Navigation**:
    - [x] **Tab Navigation**: Include at least two primary navigation tabs for easy access to main features.
+         ![tab](https://github.com/user-attachments/assets/026b55fb-c7ff-43db-8705-8b609ff28549)
+
    - [x] **Flow Navigation**: Implement structured navigation flows (e.g., detail screens, screen transitions).
+        ![flow](https://github.com/user-attachments/assets/886254ce-bbe8-4446-a8a4-7968b27cdd3a)
+
 
 6. **Screen Archetypes**:
    - [x] Design with at least three main screen types to cover the core functions and ensure a clear user journey.
      - Home/Favorite Fragments
      - Detail Recipe Screen
      - Adding personalize Recipe Screen
+
+      ![screen](https://github.com/user-attachments/assets/0484e01b-2cb0-4feb-bbbc-5e38e3667061)
+
  
 
 ## Additional Project Requirements
 7. **Mobile-Specific Features**:
    - [x] Incorporate at least one mobile-specific capability that adds unique value to the mobile experience.
      - User can select photos from their phone to add to the app.
+     
+     ![GALLERY](https://github.com/user-attachments/assets/1eb60fe0-ed89-4901-9a50-88891f6b6a72)
+
 
 8. **UI Consistency**:
    - [x] Ensure a consistent look and feel across all screens, with consistent use of fonts, colors, and layouts.

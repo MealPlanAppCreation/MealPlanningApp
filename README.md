@@ -155,22 +155,37 @@ An app designed to make meal preparations by providing recipe suggestions, and c
 1. **Minimum Viable Product (MVP)**:
    - **Required Features**: Implement at least 3 essential features critical to your app's main purpose.
      - Users can create accounts and log in
+       
+       ![login](https://github.com/user-attachments/assets/791f50a5-5707-4547-9fe6-134bfed89580)
      - User can view list of suggested recipes from an API
+       
+       ![api](https://github.com/user-attachments/assets/5cbbfff0-2e5a-444b-98f8-37cfb172e4b4)
      - User can select meals from a personalized library to create weekly plans.
+       
+       ![addCal](https://github.com/user-attachments/assets/ab2edb1a-2834-4532-a1d2-1259cbd5f67c)
+
    - **Secondary Features**: Include at least 3 additional features that enhance the app.
      - User can save favorite meals in a personalized library
+       
+       ![saveF](https://github.com/user-attachments/assets/afcdd33d-7a94-4ed4-ad4a-2c83856a1e87)
      - User can add their own recipes
+       
+       ![addR](https://github.com/user-attachments/assets/6295c8d5-dc40-433c-9757-023d90cc1df6)
      - User have Navigation UI Views (BottomNavigation) to move between the fragments and components easily
+       
+       ![Nav](https://github.com/user-attachments/assets/39e21813-42a4-4343-9d1e-23daf3d8c501)
 
-2. **Firebase Integration**:
+
+1. **Firebase Integration**:
    - Use **Firebase** for at least one key functionality:
      - **User Authentication**
      - **Real-time Database**
 
-3. **API Integration**:
+2. **API Integration**:
    - Integrate at least one **external API** to enhance the app (e.g., for data retrieval, messaging, location services). This should be a public API
-     - API USE: www.themealdb.com/api/json/v1/1/search.php?s=
-4. **Database Usage**:
+     - API USE: https://www.themealdb.com/api.php
+
+3. **Database Usage**:
    - Use **Room Database** and **Firebase Firestore** to store user data persistently, supporting at least basic **CRUD operations** (Create, Read, Update, Delete).
       - Use **Room Database** to store a list of favorite recipes
       - Use **Firebase Firestore** to store the date that user want to make their recipes
@@ -183,9 +198,9 @@ An app designed to make meal preparations by providing recipe suggestions, and c
 
 6. **Screen Archetypes**:
    - Design with at least three main screen types to cover the core functions and ensure a clear user journey.
-     - Home/Favorite Fragments:
-     - Detail Recipe Screen:
-     - Adding personalize Recipe Screen:
+     - Home/Favorite Fragments
+     - Detail Recipe Screen
+     - Adding personalize Recipe Screen
  
 
 ## Additional Project Requirements

@@ -53,15 +53,15 @@ An app designed to make meal preparations by providing recipe suggestions, and c
 
 **Required Features**
 
-1.   Users can create accounts and log in
-2.   User can view list of suggested recipes from an API
-3.   User can select meals from a personalized library to create weekly plans.
+1. [x] Users can create accounts and log in
+2. [x] User can view list of suggested recipes from an API
+3. [x] User can select meals from a personalized library to create weekly plans.
 
 **Optional Features**
-1.  User can save favorite meals in a personalized library
-2.  User can add their own recipes
-3.  User have Navigation UI Views (BottomNavigation) to move between the fragments and components easily
-4.  App sends reminders for meal prep times
+1. [x] User can save favorite meals in a personalized library
+2. [x] User can add their own recipes
+3. [x] User have Navigation UI Views (BottomNavigation) to move between the fragments and components easily
+4. [ ] App sends reminders for meal prep times
 
 ### 2. Screen Archetypes
 
@@ -153,51 +153,51 @@ An app designed to make meal preparations by providing recipe suggestions, and c
 
 ## Core Functional Requirements
 1. **Minimum Viable Product (MVP)**:
-   - **Required Features**: Implement at least 3 essential features critical to your app's main purpose.
-     - Users can create accounts and log in
+   - [x] **Required Features**: Implement at least 3 essential features critical to your app's main purpose.
+     - [x] Users can create accounts and log in
        
        ![login](https://github.com/user-attachments/assets/791f50a5-5707-4547-9fe6-134bfed89580)
-     - User can view list of suggested recipes from an API
+     - [x] User can view list of suggested recipes from an API
        
        ![api](https://github.com/user-attachments/assets/5cbbfff0-2e5a-444b-98f8-37cfb172e4b4)
-     - User can select meals from a personalized library to create weekly plans.
+     - [x] User can select meals from a personalized library to create weekly plans.
        
        ![addCal](https://github.com/user-attachments/assets/ab2edb1a-2834-4532-a1d2-1259cbd5f67c)
 
    - **Secondary Features**: Include at least 3 additional features that enhance the app.
-     - User can save favorite meals in a personalized library
+     - [x] User can save favorite meals in a personalized library
        
        ![saveF](https://github.com/user-attachments/assets/afcdd33d-7a94-4ed4-ad4a-2c83856a1e87)
-     - User can add their own recipes
+     - [x] User can add their own recipes
        
        ![addR](https://github.com/user-attachments/assets/6295c8d5-dc40-433c-9757-023d90cc1df6)
-     - User have Navigation UI Views (BottomNavigation) to move between the fragments and components easily
+     - [x] User have Navigation UI Views (BottomNavigation) to move between the fragments and components easily
        
        ![Nav](https://github.com/user-attachments/assets/39e21813-42a4-4343-9d1e-23daf3d8c501)
 
 
 2. **Firebase Integration**:
-   - Use **Firebase** for at least one key functionality:
-     - Use **User Authentication** to save email/password and authenticate users.
-     - Use **Real-time Database/Cloud Firestore** to save user calendar data.
+   - [x] Use **Firebase** for at least one key functionality:
+     - [x] Use **User Authentication** to save email/password and authenticate users.
+     - [x] Use **Real-time Database/Cloud Firestore** to save user calendar data.
 
 3. **API Integration**:
-   - Integrate at least one **external API** to enhance the app (e.g., for data retrieval, messaging, location services). This should be a public API
+   - [x] Integrate at least one **external API** to enhance the app (e.g., for data retrieval, messaging, location services). This should be a public API
      - API USE: https://www.themealdb.com/api.php
 
 4. **Database Usage**:
-   - Use **Room Database** and **Firebase Firestore** to store user data persistently, supporting at least basic **CRUD operations** (Create, Read, Update, Delete).
-      - Use **Room Database** to store a list of favorite recipes
-      - Use **Firebase Firestore** to store user calendar data.
+   - [x] Use **Room Database** and **Firebase Firestore** to store user data persistently, supporting at least basic **CRUD operations** (Create, Read, Update, Delete).
+      - [x] Use **Room Database** to store a list of favorite recipes
+      - [x] Use **Firebase Firestore** to store user calendar data.
 
 ## UI and UX Requirements
 
 5. **Navigation**:
-   - **Tab Navigation**: Include at least two primary navigation tabs for easy access to main features.
-   - **Flow Navigation**: Implement structured navigation flows (e.g., detail screens, screen transitions).
+   - [x] **Tab Navigation**: Include at least two primary navigation tabs for easy access to main features.
+   - [x] **Flow Navigation**: Implement structured navigation flows (e.g., detail screens, screen transitions).
 
 6. **Screen Archetypes**:
-   - Design with at least three main screen types to cover the core functions and ensure a clear user journey.
+   - [x] Design with at least three main screen types to cover the core functions and ensure a clear user journey.
      - Home/Favorite Fragments
      - Detail Recipe Screen
      - Adding personalize Recipe Screen
@@ -205,11 +205,11 @@ An app designed to make meal preparations by providing recipe suggestions, and c
 
 ## Additional Project Requirements
 7. **Mobile-Specific Features**:
-   - Incorporate at least one mobile-specific capability that adds unique value to the mobile experience.
+   - [x] Incorporate at least one mobile-specific capability that adds unique value to the mobile experience.
      - User can select photos from their phone to add to the app.
 
 8. **UI Consistency**:
-   - Ensure a consistent look and feel across all screens, with consistent use of fonts, colors, and layouts.
+   - [x] Ensure a consistent look and feel across all screens, with consistent use of fonts, colors, and layouts.
 
 
 
@@ -218,4 +218,4 @@ An app designed to make meal preparations by providing recipe suggestions, and c
 
 ## App Demo Video
 
-- Embed the YouTube/Vimeo link of your Completed Demo Day prep video
+- [App Demo YouTube link of Completed Demo](https://youtu.be/Sr1F0AbHiEc)

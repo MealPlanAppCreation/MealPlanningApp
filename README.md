@@ -176,19 +176,19 @@ An app designed to make meal preparations by providing recipe suggestions, and c
        ![Nav](https://github.com/user-attachments/assets/39e21813-42a4-4343-9d1e-23daf3d8c501)
 
 
-1. **Firebase Integration**:
+2. **Firebase Integration**:
    - Use **Firebase** for at least one key functionality:
-     - **User Authentication**
-     - **Real-time Database**
+     - Use **User Authentication** to save email/password and authenticate users.
+     - Use **Real-time Database/Cloud Firestore** to save user calendar data.
 
-2. **API Integration**:
+3. **API Integration**:
    - Integrate at least one **external API** to enhance the app (e.g., for data retrieval, messaging, location services). This should be a public API
      - API USE: https://www.themealdb.com/api.php
 
-3. **Database Usage**:
+4. **Database Usage**:
    - Use **Room Database** and **Firebase Firestore** to store user data persistently, supporting at least basic **CRUD operations** (Create, Read, Update, Delete).
       - Use **Room Database** to store a list of favorite recipes
-      - Use **Firebase Firestore** to store the date that user want to make their recipes
+      - Use **Firebase Firestore** to store user calendar data.
 
 ## UI and UX Requirements
 

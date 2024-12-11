@@ -4,6 +4,7 @@
 
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
+1. [Wireframes](#Wireframes)
 1. [Project Requirements](#Project-Requirements)
 ## Overview
 
@@ -115,6 +116,10 @@ An app designed to make meal preparations by providing recipe suggestions, and c
 ### Detail View Screen
 * Displays detailed information about a selected recipe/meal.
 * Can navigate back to Home Screen.
+
+## Wireframes
+![image](https://github.com/user-attachments/assets/891eaf6a-3dfe-4240-ae57-47f69f97c584)
+
 
 # Milestone 2 - Build Sprint 1 (Unit 8)
 

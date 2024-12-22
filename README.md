@@ -1,7 +1,3 @@
-## Table of Contents
-1. [Product Spec](#Product-Spec)
-1. [Project Requirements](#Project-Requirements)
-
 ### Description
 An app designed to make meal preparations by providing recipe suggestions, and customizable meal plans with ingredients and materials for all meals.
 
